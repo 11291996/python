@@ -86,7 +86,7 @@ type(c) #print the value type of the variable
 #Mathematical functions, built in 
 abs()
 round(x, n) #type(x) = float, n = nth round up
-sorted(iterable, key, reverse) #sorts the iterable, key reference, reverse = True or False
+sorted(iterable, key, reverse) #returns the sorted iterable, key reference, reverse = True or False
 #Methods -> methods apply only for a certain class(libraries) -> look up oop, built with Python
 #Math module -> built-in standard library
 import math
