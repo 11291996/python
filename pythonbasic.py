@@ -1,4 +1,4 @@
-#python by Guidio Van Rossum
+l#python by Guidio Van Rossum
 #interpreting language
 
 #Values and data types
@@ -77,15 +77,16 @@ min(iterable) #smallest
 zip(iterable1, iterable2) #simultaneously return multiple iterables, discards when length diffrence occurs  
 enumerate(iterable) #counting the order, starting index can be changed
 map(function, iterable) #returns the range of the function from iterable domain 
-reversed(sequence #reverses iterable
-isinstance(obejct, type) #check the type of the object
+reversed(sequence) #reverses iterable
+isinstance(object, type) #check the type of the object
 #returns the element in iterable if the result of the function is true when the input was the element
-filter(function, iterable) 
+filter(function, iterable)
 #print a variable, file -> writing method, flush -> sees whether the outcome is true or false.
 type(c) #print the value type of the variable 
 #Mathematical functions, built in 
 abs()
 round(x, n) #type(x) = float, n = nth round up
+sorted(iterable, key, reverse) #sorts the iterable, key reference, reverse = True or False
 #Methods -> methods apply only for a certain class(libraries) -> look up oop, built with Python
 #Math module -> built-in standard library
 import math
