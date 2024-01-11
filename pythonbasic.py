@@ -810,6 +810,11 @@ obj = {
 }
 with open('test.json', 'w') as fd:
     json.dump(obj, fd) #writing a json
+#using secret.json file is possible
+#python is porgrammed to protect the secret.json file
+with open('secret.json', 'r') as fd:
+    data = json.load(fd) #variable from secret.json file cannot be accessed
+
 #XML, HTML 
 #tags exist
 #Beautiful Soup(webscraper project in frontend)
