@@ -143,7 +143,7 @@ print(f'I love {x:5d} and {y:6d}') #padding is available
 x = input('how are you?:')
 
 ##Python Data Structures
-##Containers
+##Containers -> also called generic data structures
 #Strings
 str(x) #makes characters in the function a string
 int(x) #make the string to an integer
@@ -577,6 +577,56 @@ function(dogs = 4, men = 'dogs')
 def function(var1: type) -> type:
     pass
 print(function.__annotations__) #can be seen with this method 
+#unlike c++, this annotation won't cause an error even if the input is not the type, but many associate programs utilize this
+#many code editors also use this to give hints (put dot then ctrl + space for vscode, automatic error check)
+#generic annotation 
+def function(var1: list[str]) -> list:
+    for i in var1:
+        i.capitalize() #the editor will know i is a string
+def function(var1: dict[str, int]) -> list:
+    for item_name, item_price in dict.items():
+        print(item_name, item_price) #the editor will know item_name is a string and item_price is an integer
+#multi type generic
+def function(var1: Union[str, int]) -> list:
+    pass
+#or this, now the editor will know var1 is either string or integer
+def function(var1: str | int) -> list:
+    pass
+#optional type
+#using Union but conditional
+#string or None case
+def function(var1: Optional[str] = None):
+    if var1 is not None:
+        print(var1.capitalize())
+    else:
+        print("type is wrong")
+#also this is possible 
+def function(var1: str | None = None):
+    pass
+#using pydantic for automation of type annotation
+#for a dictionary or json format 
+from datetime import datetime
+from pydantic import BaseModel
+
+class User(BaseModel):
+    id: int
+    name: str = "John Doe"
+    signup_ts: datetime | None = None
+    friends: list[int] = []
+
+
+external_data = {
+    "id": "123",
+    "signup_ts": "2017-06-01 12:22",
+    "friends": [1, "2", b"3"], #b"3" will be converted to 3
+}
+user = User(**external_data) #the package will automatically change the type of the input
+#one can add more detailed annotation using typing package
+from typing import Annotated
+
+def say_hello(name: Annotated[str, "this is just metadata"]) -> str:
+    return f"Hello {name}" #one can access the function's detailed annotation now
+
 #python hacks 
 #comprehension 
 result = [i for i in range(n)] #faster than for + append method
