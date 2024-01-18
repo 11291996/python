@@ -614,7 +614,6 @@ class User(BaseModel):
     signup_ts: datetime | None = None
     friends: list[int] = []
 
-
 external_data = {
     "id": "123",
     "signup_ts": "2017-06-01 12:22",
@@ -626,6 +625,23 @@ from typing import Annotated
 
 def say_hello(name: Annotated[str, "this is just metadata"]) -> str:
     return f"Hello {name}" #one can access the function's detailed annotation now
+#asyncio for asynchronous programming like in the multiprocessing repository
+import asyncio
+
+async def say_after(delay, what): #async function
+    await asyncio.sleep(delay)
+    print(what)
+
+async def main():
+    print(f"started at {time.strftime('%X')}")
+
+    await say_after(1, 'hello') #just like the future like library of c++
+    await say_after(2, 'world')
+
+    print(f"finished at {time.strftime('%X')}")
+
+asyncio.run(main()) #or run 
+
 
 #python hacks 
 #comprehension 
@@ -661,7 +677,7 @@ from ..file import * #two dots mean one level upper directory
 #if a folder is imported, __init__.py is automatically made and does importing
 #basically module is importing the importing codes in __init__.py
 #some standard libraries 
-import time, random, threading
+import time, random
 #use package managing software for external packages -> currently using virtualenvwrapper and conda
 #use Deque to make doubly linked list(Tree from Data Structre and Algorithms) and Queue inference(aslo from the study)
 from collections import deque
@@ -953,7 +969,7 @@ except AssertionError as e:
     print(e)
 #Post error processing 
 try: 
-    function():
+    function()
 except SomeError as e:
     print(e, 'Exception occurred')
 print('Exception passed') #this will be printed no matter what 
@@ -1016,5 +1032,4 @@ soup = BeautifulSoup(
 headline = soup.find(name='ul', attrs = {'class':'today_list'})
 for title in headline.find_all(name='strong', attrs = {'class':'title'})
 #use 'scrapy' for interactive web
-#multi_threading
 #network structure  
