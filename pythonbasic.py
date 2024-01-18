@@ -1,4 +1,4 @@
-l#python by Guidio Van Rossum
+#python by Guidio Van Rossum
 #interpreting language
 
 #Values and data types
@@ -349,6 +349,17 @@ c = a.copy() #new address assigned
 c.add('p')
 c
 a
+#enum library -> enumeration class
+from enum import Enum
+
+class Color(Enum):
+    RED = 1
+    GREEN = 2
+    BLUE = 3
+
+red = Color.RED
+print(red.value)
+print(red.name)
 
 ##Control-flows # - comment, \ - line continues, tab - indentation
 #Iterator: a code, function that loads multiple data 
@@ -464,7 +475,7 @@ z_tuple = tuple(i**3 for i in x)
 word = 'letters'
 letter_counts = {letter:word.count(letter) for letter in set(word)}
 
-def function(var, ): #creating one's own function. Variable can follow order or assigned (var = x).
+def function(var): #creating one's own function. Variable can follow order or assigned (var = x).
     argument
 #variables are in distinguished local memory for functions 
 global #use this reserved word to access variables outside the function
@@ -472,10 +483,10 @@ nonlocal #one upper level variable access
 var = 0 #global
 def main():
     var = 0 #local, the change of this varible does not affect global var 
-    global var = 0 #now this changes global var 
+    global var #now this changes global var 
     def sub():
-        var = 0, #this also does not affect global or upper local var 
-        nonlocal var = 0 #now this changes upper local var in main()
+        var = 0 #this also does not affect global or upper local var 
+        nonlocal var #now this changes upper local var in main()
         break
 #in making the code clear, using these words are not recommanded
 #variable capture -> functions that makes their global variables change the function's result 
@@ -641,7 +652,6 @@ async def main():
     print(f"finished at {time.strftime('%X')}")
 
 asyncio.run(main()) #or run 
-
 
 #python hacks 
 #comprehension 
