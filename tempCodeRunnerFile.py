@@ -1,10 +1,8 @@
-from enum import Enum
+from fastapi import FastAPI, Path, Query
+from typing import Annotated
 
-class Color(Enum):
-    RED = 1
-    GREEN = 2
-    BLUE = 3
+app = FastAPI()
 
-red = Color
-print(red)
-print(Color.RED)
+@app.get("/items/{item_id}")
+async def read_items(item_id: int = Path(title="The ID of the item to get"), q: str = Query(alias="item-query")):
+    pass
