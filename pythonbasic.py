@@ -590,18 +590,24 @@ def function(var1: type) -> type:
 print(function.__annotations__) #can be seen with this method 
 #unlike c++, this annotation won't cause an error even if the input is not the type, but many associate programs utilize this
 #many code editors also use this to give hints (put dot then ctrl + space for vscode, automatic error check)
+#one can add more detailed annotation using typing package
+from typing import Annotated
+
+def say_hello(name: Annotated[str, "this is just metadata"]) -> str:
+    return f"Hello {name}" #one can access the function's detailed annotation now
 #generic annotation 
-def function(var1: list[str]) -> list:
+from typing import List, Dict, Union, Optional
+def function(var1: List[str]) -> List:
     for i in var1:
         i.capitalize() #the editor will know i is a string
-def function(var1: dict[str, int]) -> list:
+def function(var1: dict[str, int]) -> List:
     for item_name, item_price in dict.items():
         print(item_name, item_price) #the editor will know item_name is a string and item_price is an integer
 #multi type generic
-def function(var1: Union[str, int]) -> list:
+def function(var1: Union[str, int]) -> List:
     pass
 #or this, now the editor will know var1 is either string or integer
-def function(var1: str | int) -> list:
+def function(var1: str | int) -> List:
     pass
 #optional type
 #using Union but conditional
@@ -623,7 +629,7 @@ class User(BaseModel):
     id: int
     name: str = "John Doe"
     signup_ts: datetime | None = None
-    friends: list[int] = []
+    friends: List[int] = []
 
 external_data = {
     "id": "123",
@@ -631,11 +637,6 @@ external_data = {
     "friends": [1, "2", b"3"], #b"3" will be converted to 3
 }
 user = User(**external_data) #the package will automatically change the type of the input
-#one can add more detailed annotation using typing package
-from typing import Annotated
-
-def say_hello(name: Annotated[str, "this is just metadata"]) -> str:
-    return f"Hello {name}" #one can access the function's detailed annotation now
 #asyncio for asynchronous programming like in the multiprocessing repository
 import asyncio
 
