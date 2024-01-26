@@ -12,6 +12,7 @@ d = ('hi', True, 1) #tuple
 e = ['hi', False, .01] #list
 f = set(1, None, 'no') #set
 g = {'a':None, True:1} #dictionary
+h = b'\n\x14\x1e(2' #bytes
 #mutable >> idependent class(index changing occurs) -> data structure using multiple addresses
 #immutable >> index replacing is impossible, but function might work, data structure in a single address
 
@@ -637,6 +638,9 @@ external_data = {
     "friends": [1, "2", b"3"], #b"3" will be converted to 3
 }
 user = User(**external_data) #the package will automatically change the type of the input
+#also retracting the data is possible
+user_dict = user.dict() #keyword arguments of the model instance
+
 #asyncio for asynchronous programming like in the multiprocessing repository
 import asyncio
 
