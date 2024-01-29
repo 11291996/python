@@ -69,91 +69,6 @@ del #deletes following object
 pass #passes the logic
 
 ##Python Data Structures
-##Containers -> also called generic data structures
-#Strings
-str(x) #makes characters in the function a string
-int(x) #make the string to an integer
-#Indexing >> gives an individual character an index
-#uses Unicode(IT Foundation)
-word = 'python'
-word[3]
-#Slicing >> to obtain substring
-word[0:2] #does not include the last index
-word[::3] #step(starts from 0)
-word[3::-1] #default is [0, the last index + 1, 1]
-L = len(word) #shows the number of characters in the string
-#Methods
-x.find(str) #determines str is in x or not 
-x.count(str) #counts how many times does str repeats in x 
-x.lower()
-x.upper()
-x.capitalize() #first letter becomes uppercase
-x.title() #make the string a title
-x.split(str) #deletes str in x and splits x 
-x.replace(old, new) #relaces old characters in the string to new 
-x.startswith(str) #determines whether x begins with str
-x.endswith(str) #vice a versa 
-x.isalpha() #does x contain only alphabet
-x.isdigit() #does x contain only digit 
-x.isupper() #does x contain only uppercase
-x.islower() #does x contain only lowercase
-x.isnumeric() #does x contain only numeric value
-x.isalnum() #does x contain both numeric and alphabet 
-x.strip() #gets rid of spaces on left and right 
-x.lstrip() #gets rid of space on the left
-x.rstrip() # gets rid of psace on the right
-x.count(pattern) #counts how many times the pattern is repeated in x
-x.rfind(pattern) #gives the index of the last appearance of the pattern
-x.join(iterable) #joins strings in iterable with x appearing each joining 
-
-a = 'a' + 'b' #this is possible. One can add variables between strings. 
-
-#String is immutable
-#escape words
-'\n' #next line
-'\r' #carriage return and inserts 
-'\t' #tab
-'\b' #back space
-'\\' #back slash
-'\'' #apostrophex
-'\"' #qoute mark
-'\e' #esc key
-r'string\n' #this will not apply escape words 
-'sfsf' in 'sfsf2' #can check
-#Regular Expression -> advanced pattern finding
-#pattern defining 
-'\w' #english letter and digit, also under bar is included
-'\W' #not letter or digit, esacpe word etc..
-'\d' #digit
-'\D' #words other than digit 
-'\s' #escape words 
-'\S' #other than escape words 
-'\ba' #starting or ending with a 
-x.find('book\s\d') #book 1, book 2, etc..
-#meta character: ^, $, *, +, ?, {}, [], \, |, (), ., :
-#add \ in front to use them in expression
-#these chracters are used to express regular expression
-'/[adsfa]/' #return any word that include more than one letter in []
-'/[0-3]/' #- is used to express range 
-'/[^abd]/' #return words that does not have these words 
-'/.a./' #use dot for any word
-'/ab*c/' #returns words that has more than 0 time repetition ex: ac, abc, abbc, ...
-'/ab+c/' #more than 1 time  
-'/ab?c/' #only once or 0 time ex: abc or ac
-'/ab{m,n}c/' #minimum m and maximum n repetition
-'/ab{m,}c/' #maxumum m 
-'/ab{,n}c/' #minimum n 
-'/ab{m}c/' #exactly m ex:\d{4}
-'/a|b/' #a pattern or b pattern
-'/^the/' #beginning of a line
-'/\.$/' #end of the line 
-'/(\w{2})(\d{3:2})\1\2/' #prioritizes, captures and saves the parenthesis expression
-'/(?:\w{3})' #does not use capturing but only prioritize 
-'/...(?=pattern)/' #ends with the pattern but returns in front only
-'/...(?<=pattern)/' #starts with the pattern but returns only the rear 
-#create pattern with raw string
-pattern = '\d{3}-\d{4}-\d{4}'
-
 #Iterables
 #List >> mutable
 list() #only one object available 
@@ -289,7 +204,6 @@ print(red.name)
 
 #Built-in functions -> already build in the language, C is used
 #see myfunctionbuilding.py 
-print(object(s), sep=separator, end=end, file=file, flush=flush)
 sum(iterable) #adds inputs 
 any(boolean iterable) #returns or logic 
 all(boolean iterable) #returns and logic
@@ -328,6 +242,99 @@ math.tan(x)
 math.degrees(x) #radian to degree
 math.pi 
 math.e
+
+##Containers -> also called generic data structures
+#Strings
+str(x) #makes characters in the function a string
+int(x) #make the string to an integer
+repr(x) #returns the string representation of the object
+a = 1 
+b = "1"
+print("a =" a, "b =" b, sep = '\n')
+#this will not distinguish the type of the variable
+repr(a) 
+repr(b) #this will distinguish the type of the variable\
+#Indexing >> gives an individual character an index
+#uses Unicode(IT Foundation)
+word = 'python'
+word[3]
+#Slicing >> to obtain substring
+word[0:2] #does not include the last index
+word[::3] #step(starts from 0)
+word[3::-1] #default is [0, the last index + 1, 1]
+L = len(word) #shows the number of characters in the string
+#Methods
+x.find(str) #determines str is in x or not 
+x.count(str) #counts how many times does str repeats in x 
+x.lower()
+x.upper()
+x.capitalize() #first letter becomes uppercase
+x.title() #make the string a title
+x.split(str) #deletes str in x and splits x 
+x.replace(old, new) #relaces old characters in the string to new 
+x.startswith(str) #determines whether x begins with str
+x.endswith(str) #vice a versa 
+x.isalpha() #does x contain only alphabet
+x.isdigit() #does x contain only digit 
+x.isupper() #does x contain only uppercase
+x.islower() #does x contain only lowercase
+x.isnumeric() #does x contain only numeric value
+x.isalnum() #does x contain both numeric and alphabet 
+x.strip() #gets rid of spaces on left and right 
+x.lstrip() #gets rid of space on the left
+x.rstrip() # gets rid of psace on the right
+x.count(pattern) #counts how many times the pattern is repeated in x
+x.rfind(pattern) #gives the index of the last appearance of the pattern
+x.join(iterable) #joins strings in iterable with x appearing each joining 
+
+a = 'a' + 'b' #this is possible. One can add variables between strings. 
+
+#String is immutable
+#escape words
+'\n' #next line
+'\r' #carriage return and inserts 
+'\t' #tab
+'\b' #back space
+'\\' #back slash
+'\'' #apostrophex
+'\"' #qoute mark
+'\e' #esc key
+r'string\n' #this will not apply escape words 
+'sfsf' in 'sfsf2' #can check
+#Regular Expression -> advanced pattern finding
+#pattern defining 
+'\w' #english letter and digit, also under bar is included
+'\W' #not letter or digit, esacpe word etc..
+'\d' #digit
+'\D' #words other than digit 
+'\s' #escape words 
+'\S' #other than escape words 
+'\ba' #starting or ending with a 
+x.find('book\s\d') #book 1, book 2, etc..
+#meta character: ^, $, *, +, ?, {}, [], \, |, (), ., :
+#add \ in front to use them in expression
+#these chracters are used to express regular expression
+'/[adsfa]/' #return any word that include more than one letter in []
+'/[0-3]/' #- is used to express range 
+'/[^abd]/' #return words that does not have these words 
+'/.a./' #use dot for any word
+'/ab*c/' #returns words that has more than 0 time repetition ex: ac, abc, abbc, ...
+'/ab+c/' #more than 1 time  
+'/ab?c/' #only once or 0 time ex: abc or ac
+'/ab{m,n}c/' #minimum m and maximum n repetition
+'/ab{m,}c/' #maxumum m 
+'/ab{,n}c/' #minimum n 
+'/ab{m}c/' #exactly m ex:\d{4}
+'/a|b/' #a pattern or b pattern
+'/^the/' #beginning of a line
+'/\.$/' #end of the line 
+'/(\w{2})(\d{3:2})\1\2/' #prioritizes, captures and saves the parenthesis expression
+'/(?:\w{3})' #does not use capturing but only prioritize 
+'/...(?=pattern)/' #ends with the pattern but returns in front only
+'/...(?<=pattern)/' #starts with the pattern but returns only the rear 
+
+#create pattern with raw string
+pattern = '\d{3}-\d{4}-\d{4}'
 #Output function
 print(1,2,3,4 ,sep='*', end=' hey')
 #1*2*3*4 hey
