@@ -67,81 +67,6 @@ not, or, and #logical
 assert #checks the conditions, continues if TRUE, or does not if FALSE
 del #deletes following object
 pass #passes the logic
-#Built-in functions -> already build in the language, C is used
-#see myfunctionbuilding.py 
-print(object(s), sep=separator, end=end, file=file, flush=flush)
-sum(iterable) #adds inputs 
-any(boolean iterable) #returns or logic 
-all(boolean iterable) #returns and logic
-max(iterable) #biggest 
-min(iterable) #smallest
-zip(iterable1, iterable2) #simultaneously return multiple iterables, discards when length diffrence occurs  
-enumerate(iterable) #counting the order, starting index can be changed
-map(function, iterable) #returns the range of the function from iterable domain 
-reversed(sequence) #reverses iterable
-isinstance(object, type) #check the type of the object
-#returns the element in iterable if the result of the function is true when the input was the element
-filter(function, iterable)
-#print a variable, file -> writing method, flush -> sees whether the outcome is true or false.
-type(c) #print the value type of the variable 
-#Mathematical functions, built in 
-abs()
-round(x, n) #type(x) = float, n = nth round up
-sorted(iterable, key, reverse) #returns the sorted iterable, key reference, reverse = True or False
-#Methods -> methods apply only for a certain class(libraries) -> look up oop, built with Python
-#Math module -> built-in standard library
-import math
-math.ceil(x) #round up
-math.factorial(x)
-math.floor(x)
-math.isfinite(x)
-math.isinf(x)
-math.isnan(x)
-math.trunc(x)
-math.exp(x)
-math.log(x, 10) #(x,base)
-math.log10(x)
-math.sqrt(x)
-math.cos(x)
-math.sin(x)
-math.tan(x)
-math.degrees(x) #radian to degree
-math.pi 
-math.e
-#Output function
-print(1,2,3,4 ,sep='*', end=' hey')
-#1*2*3*4 hey
-#% formatting
-'%d' #works like an integer variable in a string
-print('%d hi' %(4))
-#naming
-print('%(name)s %(age)d' %{'name':'jack','age':24})
-'%s' #works like a string variable in a string 
-'%f' #works like a float varialbe in a string
-'%o' #works like a octaldigit in a string
-'%x' #works like a hexadigit in a string
-#the letters between % and s or d manipulates the input
-#this can be done also with the formatting methods above
-#padding
-#number between % and letter keeps the word length 
-print('%4d + %5d' %(1,2)) #puts the spacing in front 
-print('%-4d + %-5d' %(1,2)) #puts the spacing after
-print('%04d + %05d' %(1,2)) #puts zero rather than spaces
-print('%.2f + %.4f' %(1.3334, 2.334)) #manages the floating digit number
-print('%3.2f + %7.4f' %(1.3334, 2.334)) #manages the spacing with floating 
-print('%03.2f + %07.4f' %(1.3334, 2.334)) #also changing spaces to zero is possible
-#method formatting
-x = 3; y = 5 #all the operations must be seperated in line or semicolon
-print('I love {} and {}'.format(x,y)) #values assigned come out
-print('I love {1} and {0}'.format('bread','butter')) #the numbers in {} assigns output values' order
-print('{1:8s}{0:7s}'.format('bread','butter')) #padding can be applied
-#naming
-print('{cat:8s}{dog:7s}'.format(dog = 'Scooby', cat = 'Tom'))
-#f formatting
-print(f'I love {x} and {y}') #best way for now 
-print(f'I love {x:5d} and {y:6d}') #padding is available
-#input function >> adds a step before an assignment 
-x = input('how are you?:')
 
 ##Python Data Structures
 ##Containers -> also called generic data structures
@@ -361,6 +286,82 @@ class Color(Enum):
 red = Color.RED
 print(red.value)
 print(red.name)
+
+#Built-in functions -> already build in the language, C is used
+#see myfunctionbuilding.py 
+print(object(s), sep=separator, end=end, file=file, flush=flush)
+sum(iterable) #adds inputs 
+any(boolean iterable) #returns or logic 
+all(boolean iterable) #returns and logic
+max(iterable) #biggest 
+min(iterable) #smallest
+zip(iterable1, iterable2) #simultaneously return multiple iterables, discards when length diffrence occurs  
+enumerate(iterable) #counting the order, starting index can be changed
+map(function, iterable) #returns the range of the function from iterable domain 
+reversed(sequence) #reverses iterable
+isinstance(object, type) #check the type of the object
+#returns the element in iterable if the result of the function is true when the input was the element
+filter(function, iterable)
+#print a variable, file -> writing method, flush -> sees whether the outcome is true or false.
+type(c) #print the value type of the variable 
+#Mathematical functions, built in 
+abs()
+round(x, n) #type(x) = float, n = nth round up
+sorted(iterable, key, reverse) #returns the sorted iterable, key reference, reverse = True or False
+#Methods -> methods apply only for a certain class(libraries) -> look up oop, built with Python
+#Math module -> built-in standard library
+import math
+math.ceil(x) #round up
+math.factorial(x)
+math.floor(x)
+math.isfinite(x)
+math.isinf(x)
+math.isnan(x)
+math.trunc(x)
+math.exp(x)
+math.log(x, 10) #(x,base)
+math.log10(x)
+math.sqrt(x)
+math.cos(x)
+math.sin(x)
+math.tan(x)
+math.degrees(x) #radian to degree
+math.pi 
+math.e
+#Output function
+print(1,2,3,4 ,sep='*', end=' hey')
+#1*2*3*4 hey
+#% formatting
+'%d' #works like an integer variable in a string
+print('%d hi' %(4))
+#naming
+print('%(name)s %(age)d' %{'name':'jack','age':24})
+'%s' #works like a string variable in a string 
+'%f' #works like a float varialbe in a string
+'%o' #works like a octaldigit in a string
+'%x' #works like a hexadigit in a string
+#the letters between % and s or d manipulates the input
+#this can be done also with the formatting methods above
+#padding
+#number between % and letter keeps the word length 
+print('%4d + %5d' %(1,2)) #puts the spacing in front 
+print('%-4d + %-5d' %(1,2)) #puts the spacing after
+print('%04d + %05d' %(1,2)) #puts zero rather than spaces
+print('%.2f + %.4f' %(1.3334, 2.334)) #manages the floating digit number
+print('%3.2f + %7.4f' %(1.3334, 2.334)) #manages the spacing with floating 
+print('%03.2f + %07.4f' %(1.3334, 2.334)) #also changing spaces to zero is possible
+#method formatting
+x = 3; y = 5 #all the operations must be seperated in line or semicolon
+print('I love {} and {}'.format(x,y)) #values assigned come out
+print('I love {1} and {0}'.format('bread','butter')) #the numbers in {} assigns output values' order
+print('{1:8s}{0:7s}'.format('bread','butter')) #padding can be applied
+#naming
+print('{cat:8s}{dog:7s}'.format(dog = 'Scooby', cat = 'Tom'))
+#f formatting
+print(f'I love {x} and {y}') #best way for now 
+print(f'I love {x:5d} and {y:6d}') #padding is available
+#input function >> adds a step before an assignment 
+x = input('how are you?:')
 
 ##Control-flows # - comment, \ - line continues, tab - indentation
 #Iterator: a code, function that loads multiple data 
