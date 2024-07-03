@@ -191,6 +191,7 @@ c.add('p')
 c
 a
 #enum library -> enumeration class
+#can be used like a dict, but the main purpose is to categorize defined variables
 from enum import Enum
 
 class Color(Enum):
