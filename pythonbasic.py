@@ -684,7 +684,6 @@ print(list(filter(lambda x: x > 4, range(10))))
 #Tenary operators -> returns value1 if condition holds and if else returns value2 
 value1 if condition else value2
 class #creates a class -> see object_oriented_programming.py
-#Module -> currently read software 
 #Package -> imported software
 import file #normally, the file must be in the same directory
 #in python /usr/bin/python -> usr.bin.python
