@@ -838,10 +838,10 @@ print(*[entry for entry in glob.glob('path/*.txt')]) #* will get any file with .
 import pickle
 seq = [[i * j for i in range(100)] for j in range(100)] #python matrix object saved in python software 
 #creating a pickle file and write in the file
-with open('test.pk1', 'wb') as fd: #the object is in binary
+with open('test.pkl', 'wb') as fd: #the object is in binary
     pickle.dump(seq, fd) #the object is in os as pickle file now
 del seq #deleting the object in the python software
-with open('test.pk1', 'rb') as fd:
+with open('test.pkl', 'rb') as fd:
     seq = pickle.load(fd) #the object is returned to the python software 
 print(seq[1][4])
 #not that used often due to security and compatibilty problem
