@@ -570,6 +570,11 @@ def print_decorator(function):
 def divide(var):
     return var / 2 
 print(divide.__name__) #this will return 'print_closure' if Wraps is not used
+#partial function -> a function that uses a function as an input and returns a new function with some inputs fixed
+from functools import partial
+def add(x,y):
+    return x + y
+add_2 = partial(add, 2) #fixing the first input as 2
 #recursive function -> uses itself repeatedly, loops can generate the same code 
 def factorial(n):
     if n == 1:
